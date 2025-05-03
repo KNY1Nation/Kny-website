@@ -1,0 +1,71 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    background: linear-gradient(to bottom, #fefae0, #e0f7fa);
+    margin: 0;
+    padding: 0;
+    color: #2e2e2e;
+}
+
+header, footer {
+    background: #d32f2f; /* rouge Kanaky */
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    max-width: 900px;
+    margin: 2em auto;
+    padding: 2em;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    border-left: 8px solid #d32f2f; /* poteau central rouge */
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    color: #388e3c; /* vert forêt */
+    border-bottom: 2px solid #388e3c;
+    padding-bottom: 0.3em;
+    margin-bottom: 0.8em;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+p {
+    line-height: 1.6;
+}
+
+button, .lang-switch, a {
+    background: #0288d1; /* bleu océan */
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-decoration: none;
+    font-size: 1em;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+button:hover, .lang-switch:hover, a:hover {
+    background: #01579b;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 1.2em;
+}
+
+footer {
+    font-size: 0.9em;
+    margin-top: 3em;
+}
