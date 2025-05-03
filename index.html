@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>$KNY — La monnaie Kanak, ouverte au monde</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="card" style="margin: 30px auto; text-align: center; max-width: 500px; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+
+    <img src="images/$KNY_MM.png" alt="KNY Token Logo" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 20px;">
+
+    <h2 style="color: #d32f2f;">Achetez $KNY maintenant</h2>
+
+ 		<div id="countdown" style="font-size: 24px; margin-bottom: 20px; color: #d32f2f;"></div>
+
+
+
+<script>
+
+  // Définir la date de lancement (13 mai à 12:00 heure locale)
+
+  const launchDate = new Date('2025-05-13T12:00:00').getTime();
+
+
+
+  const countdown = document.getElementById('countdown');
+
+
+
+  const x = setInterval(function() {
+
+    const now = new Date().getTime();
+
+    const distance = launchDate - now;
+
+
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+
+    countdown.innerHTML = `Lancement dans : ${days}j ${hours}h ${minutes}m ${seconds}s`;
+
+
+
+    if (distance < 0) {
+
+      clearInterval(x);
+
+      countdown.innerHTML = "Le $KNY est lancé !";
+
+    }
+
+  }, 1000);
+
+</script> 
+
+    <p><strong>Adresse du contrat :</strong><br>Contract_link</p>
+
+    <button onclick="addToken()" style="background-color: #d32f2f; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; font-size: 18px;">Ajouter à MetaMask</button>
+
+</div>
+
+
+
+<script>
+
+    async function addToken() {
+
+        try {
+
+            const wasAdded = await window.ethereum.request({
+
+                method: 'wallet_watchAsset',
+
+                params: {
+
+                    type: 'ERC20',
+
+                    options: {
+
+                        address: 'Contract_link',
+
+                        symbol: 'KNY',
+
+                        decimals: 18,
+
+                        image: 'https://example.com/kny-logo.png',
+
+                    },
+
+                },
+
+            });
+
+
+
+            if (wasAdded) {
+
+                console.log('Token ajouté !');
+
+            } else {
+
+                console.log('Token non ajouté.');
+
+            }
+
+        } catch (error) {
+
+            console.error('Erreur lors de l’ajout du token :', error);
+
+        }
+
+    }
+
+</script>
+
+<header>
+
+  <h1 id="title">$KNY — La monnaie Kanak, ouverte au monde</h1>
+
+  <span class="lang-switch" onclick="switchLang()">EN</span>
+
+</header>
+
+<main>
+
+  <section id="home">
+
+    <h2>Accueil</h2>
+
+    <p id="homeText">Entrez dans la case, prenez place autour du poteau central. Soutenez une économie où l’acte prime sur le profit.</p>
+
+  </section>
+
+
+
+  <section id="about">
+
+    <h2>À propos</h2>
+
+    <p id="aboutText">$KNY est la cryptomonnaie du peuple Kanak, ancrée dans les valeurs de coutume, de solidarité et de souveraineté. Le peuple Kanak est le poteau central de la case. Autour, les peuples du Pacifique et les soutiens du monde entier sont invités à entrer, à participer et à tisser des liens.</p>
+
+    <a href="manifesto.html">Le manifeste</a>
+
+  </section>
+
+
+
+  <section id="how">
+
+    <h2>Fonctionnement</h2>
+
+    <p id="howText">Chaque transaction peut inclure un geste numérique (NFT) : respect, unité, réparation… Chaque geste mine automatiquement des tokens $KNY, déposés dans un pool communautaire. Le pool est redistribué à tous les détenteurs de tokens, de façon équitable. Les Porteurs de Voix augmentent le minage collectif, sans gain personnel.</p>
+
+    <a href="how-it-works.html">Comment ça marche</a>
+
+  </section>
+
+
+
+  <section id="why">
+
+    <h2>Pourquoi participer</h2>
+
+    <p id="whyText">Soutenir la souveraineté Kanak. Participer à une économie décentralisée et équitable. Recevoir des $KNY et des NFTs symboliques. Prendre part à une aventure humaine, politique et culturelle unique.</p>
+
+  </section>
+
+
+
+  <section id="roadmap">
+
+    <h2>Feuille de route</h2>
+
+    <ul id="roadmapList">
+
+      <li>Lancement du token $KNY et des gestes</li>
+
+      <li>Déploiement des badges Porteurs de Voix</li>
+
+      <li>Ouverture sur les plateformes d’échange</li>
+
+      <li>Développement communautaire international</li>
+
+    </ul>
+
+  </section>
+
+
+
+  <section id="join">
+
+    <h2>Rejoindre</h2>
+
+    <ul id="joinList">
+
+      <li>Acheter $KNY</li>
+
+      <li>Recevoir un geste</li>
+
+      <li>Entrer dans la case : Newsletter / Communauté</li>
+
+    </ul>
+
+  </section>
+
+
+
+  <section id="contact">
+
+    <h2>Contact / Communauté</h2>
+
+    <ul>
+
+      <li>Discord</li>
+
+      <li>Telegram</li>
+
+      <li>Twitter</li>
+
+      <li>Email</li>
+
+      <li>GitHub</li>
+
+    </ul>
+
+  </section>
+
+</main>
+
+
+
+<footer>
+
+  &copy; 2025 KNY Nation
+
+</footer>
+
+
+
+<script>
+
+  const frContent = {
+
+    title: "$KNY — La monnaie Kanak, ouverte au monde",
+
+    homeText: "Entrez dans la case, prenez place autour du poteau central. Soutenez une économie où l’acte prime sur le profit.",
+
+    aboutText: "$KNY est la cryptomonnaie du peuple Kanak, ancrée dans les valeurs de coutume, de solidarité et de souveraineté. Le peuple Kanak est le poteau central de la case. Autour, les peuples du Pacifique et les soutiens du monde entier sont invités à entrer, à participer et à tisser des liens.",
+
+    howText: "Chaque transaction peut inclure un geste numérique (NFT) : respect, unité, réparation… Chaque geste mine automatiquement des tokens $KNY, déposés dans un pool communautaire. Le pool est redistribué à tous les détenteurs de tokens, de façon équitable. Les Porteurs de Voix augmentent le minage collectif, sans gain personnel.",
+
+    whyText: "Soutenir la souveraineté Kanak. Participer à une économie décentralisée et équitable. Recevoir des $KNY et des NFTs symboliques. Prendre part à une aventure humaine, politique et culturelle unique.",
+
+    roadmapList: ["Lancement du token $KNY et des gestes", "Déploiement des badges Porteurs de Voix", "Ouverture sur les plateformes d’échange", "Développement communautaire international"],
+
+    joinList: ["Acheter $KNY", "Recevoir un geste", "Entrer dans la case : Newsletter / Communauté"]
+
+  };
+
+  
+
+  const enContent = {
+
+    title: "$KNY — The Kanak Currency, Open to the World",
+
+    homeText: "Step into the house, take your place around the central post. Support an economy where action matters more than profit.",
+
+    aboutText: "$KNY is the cryptocurrency of the Kanak people, rooted in the values of custom, solidarity, and sovereignty. The Kanak people stand as the central post of the house. Around them, Pacific peoples and global supporters are invited to enter, participate, and weave bonds.",
+
+    howText: "Each transaction can include a digital gesture (NFT): respect, unity, healing… Each gesture automatically mines $KNY tokens, placed in a communal pool. The pool is redistributed equally to all token holders. Voice Bearers amplify collective mining, without personal profit.",
+
+    whyText: "Support Kanak sovereignty. Join a decentralized, fair economy. Receive $KNY tokens and symbolic NFTs. Take part in a unique human, political, and cultural adventure.",
+
+    roadmapList: ["Launch of $KNY token and gestures", "Deployment of Voice Bearer badges", "Listing on exchange platforms", "Global community growth"],
+
+    joinList: ["Buy $KNY", "Receive a gesture", "Step into the house: Newsletter / Community"]
+
+  };
+
+
+
+  function switchLang() {
+
+    const lang = document.querySelector('.lang-switch').innerText;
+
+    const content = lang === 'EN' ? enContent : frContent;
+
+    document.querySelector('#title').innerText = content.title;
+
+    document.querySelector('#homeText').innerText = content.homeText;
+
+    document.querySelector('#aboutText').innerText = content.aboutText;
+
+    document.querySelector('#howText').innerText = content.howText;
+
+    document.querySelector('#whyText').innerText = content.whyText;
+
+    
+
+    const roadmapList = document.querySelector('#roadmapList');
+
+    roadmapList.innerHTML = '';
+
+    content.roadmapList.forEach(item => {
+
+      const li = document.createElement('li');
+
+      li.innerText = item;
+
+      roadmapList.appendChild(li);
+
+    });
+
+
+
+    const joinList = document.querySelector('#joinList');
+
+    joinList.innerHTML = '';
+
+    content.joinList.forEach(item => {
+
+      const li = document.createElement('li');
+
+      li.innerText = item;
+
+      joinList.appendChild(li);
+
+    });
+
+
+
+    document.querySelector('.lang-switch').innerText = lang === 'EN' ? 'FR' : 'EN';
+
+  }
+
+</script>
+
+</body>
+
+</html>
