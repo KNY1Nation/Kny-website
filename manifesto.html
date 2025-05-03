@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manifeste de $KNY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1 id="title">Manifeste de $KNY</h1>
+  <span class="lang-switch" onclick="switchLang()">EN</span>
+  <a href="index.html">Accueil</a>
+</header>
+<main id="manifestoText"></main>
+<footer>
+  &copy; 2025 KNY Nation
+</footer>
+<script>
+const frContent = `
+<p><strong>$KNY n’est pas une cryptomonnaie comme les autres.</strong> Elle est une parole, une mémoire, une invitation. Elle ne court pas après le profit. Elle cherche à restaurer, à rééquilibrer, à relier. Elle naît d’une terre, d’un peuple, d’un souffle ancien qui s’adapte à l’ère numérique.</p>
+<h2>Une monnaie enracinée</h2>
+<p>Au cœur de Kanaky, l’igname pousse lentement, patiemment. Elle ne se hâte pas, elle écoute la terre. $KNY est comme l’igname : une monnaie qui prend le temps, qui respecte le rythme de la communauté, qui refuse l’accélération aveugle des marchés.</p>
+<p>Dans la société kanak, l’économie n’est pas une accumulation. C’est un échange. Un geste, un regard, une parole. L’acte de donner précède l’acte de recevoir. C’est pourquoi chaque transaction de $KNY peut s’accompagner d’un geste numérique, une sorte de coutume codée, de mémoire offerte à l’autre.</p>
+<h2>L’échange qui crée la richesse</h2>
+<p>Dans le monde de $KNY, ce n’est pas le travail isolé qui crée la richesse. Ce n’est pas la machine, ce n’est pas l’extraction, ce n’est pas la spéculation.</p>
+<p>C’est l’échange. C’est le lien. C’est le mouvement entre les personnes. À chaque transfert de $KNY, un petit acte de minage communautaire se produit. Les tokens ainsi créés n’appartiennent à personne en particulier. Ils vont dans un pot commun, un pool communautaire, où ils attendent d’être redistribués à tous.</p>
+<p>Dans cette économie, il est impossible de devenir riche seul. Mais il est facile d’enrichir la communauté.</p>
+<h2>Une monnaie des saisons</h2>
+<p>Nous envisageons même de caler $KNY sur le rythme des saisons, sur le cycle de l’igname et des fêtes coutumières. Peut-être que pendant la période de la récolte, le minage communautaire sera plus généreux. Peut-être que pendant le temps des échanges, les gestes numériques auront plus de poids.</p>
+<p>La technologie moderne, si elle veut servir les peuples, doit s’incliner devant la terre. $KNY rêve d’être une monnaie qui écoute le vent, la pluie, la terre, les étoiles. Une monnaie qui respire.</p>
+<h2>La place du peuple premier</h2>
+<p>Le peuple kanak est le poteau central de la case. Autour, il y a de la place pour les autres : les Océaniens, les visiteurs, les soutiens du monde entier. Mais jamais il ne faut oublier qui est au centre.</p>
+<p>$KNY ne se cache pas derrière des discours universels vagues. C’est une monnaie kanak, pensée par et pour le peuple kanak, mais ouverte à ceux qui viennent en alliés, en partenaires, en invités respectueux.</p>
+<h2>Une économie réparatrice</h2>
+<p>L’histoire de Kanaky est marquée par la dépossession, la spoliation, l’injustice. $KNY n’efface pas ce passé. Mais il propose autre chose : une économie qui refuse la concentration des richesses, une technologie qui amplifie la voix collective, une pratique où nul n’est oublié.</p>
+<p>Les Porteurs de Voix, ces figures symboliques du système, ne prennent pas plus pour eux-mêmes. Ils amplifient le minage, ils nourrissent le commun, mais ils restent au service.</p>
+<h2>Une invitation au monde</h2>
+<p>$KNY n’est pas qu'un produit à acheter. C’est une invitation à rejoindre un mouvement. À entrer dans la case, à s’asseoir, à écouter, à partager. À expérimenter une économie où l’acte de donner vaut plus que l’acte de prendre.</p>
+<p>Que vous soyez Kanak, Océanien, ou simplement humain, vous êtes invité. Mais souvenez-vous : ici, on entre avec respect.</p>
+<h2>Conclusion</h2>
+<p>Nous ne voulons pas d’une cryptomonnaie de plus. Nous voulons une cryptomonnaie qui ait une âme. Une cryptomonnaie où la technologie serve la terre, où l’économie serve le lien, où la mémoire se transmette d’un clic comme autrefois d’une main à l’autre.</p>
+<p>$KNY est un acte politique. $KNY est un acte poétique. $KNY est une tentative. À vous d’y prendre place.</p>`;
+
+const enContent = `
+<p><strong>$KNY is not a cryptocurrency like any other.</strong> It is a word, a memory, an invitation. It does not chase profit. It seeks to restore, to rebalance, to connect. It is born of a land, a people, an ancient breath that is adapting to the digital age.</p>
+<h2>A rooted currency</h2>
+<p>In the heart of Kanaky, the yam grows slowly, patiently. It listens to the earth. $KNY is like the yam: a currency that takes its time, that respects the rhythm of the community, that refuses blind market acceleration.</p>
+<p>In Kanak society, economy is not accumulation. It is exchange — a gesture, a look, a word. The act of giving comes before receiving. That’s why each $KNY transaction can carry a digital gesture, a coded custom, a memory offered.</p>
+<h2>Exchange that creates wealth</h2>
+<p>It’s not isolated work, machines, extraction, or speculation that create wealth. It’s exchange, connection, movement. Each $KNY transfer triggers communal mining. The tokens go into a common pot, redistributed to all.</p>
+<h2>A seasonal currency</h2>
+<p>We imagine linking $KNY to the seasons, to the yam cycle and customary festivals. During harvest, mining could be more generous. During exchanges, gestures might carry more weight. $KNY dreams of being a currency that listens to the land.</p>
+<h2>The place of the first people</h2>
+<p>The Kanak people are the central post of the house. Around them, there’s room for others. $KNY is designed by and for the Kanak, but welcomes all respectful allies.</p>
+<h2>A restorative economy</h2>
+<p>Kanaky’s history bears the scars of dispossession. $KNY offers an economy that refuses wealth concentration, technology that amplifies the collective voice, practice where no one is forgotten.</p>
+<h2>An invitation to the world</h2>
+<p>$KNY is not only a product. It’s an invitation to enter the house, to listen, to share, to experience an economy where giving matters more than taking.</p>
+<h2>Conclusion</h2>
+<p>$KNY is a political act. $KNY is a poetic act. $KNY is an attempt. It’s your turn to step in.</p>`;
+
+document.querySelector('#manifestoText').innerHTML = frContent;
+function switchLang() {
+  const langSwitch = document.querySelector('.lang-switch');
+  if (langSwitch.innerText === 'EN') {
+    document.querySelector('#title').innerText = 'Manifesto of $KNY';
+    document.querySelector('#manifestoText').innerHTML = enContent;
+    langSwitch.innerText = 'FR';
+  } else {
+    document.querySelector('#title').innerText = 'Manifeste de $KNY';
+    document.querySelector('#manifestoText').innerHTML = frContent;
+    langSwitch.innerText = 'EN';
+  }
+}
+</script>
+</body>
+</html>
