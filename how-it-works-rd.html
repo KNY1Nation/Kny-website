@@ -6,81 +6,106 @@
   <title>$KNY — Comment ça marche</title>
   <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  
 </head>
 <body>
-  <header>
-    <h1>$KNY — Comment ça marche</h1>
-    <a href="index.html" class="lang-switch">Accueil</a>
-    <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
-  </header>
 
-  <main>
-    <div class="lang fr">
-      <section>
-        <img src="images/01-echange-natte.png" alt="Échange sur une natte">
-        <div>
-          <h2>💡 L’échange crée la richesse</h2>
-          <p>Chaque échange de $KNY peut inclure un <strong>geste numérique</strong> : respect, unité, partage. Ce geste agit comme un minage symbolique, créant de nouveaux tokens.</p>
-        </div>
-      </section>
-      <section>
-        <img src="images/02-geste-numerique-soleil.png" alt="Geste numérique lumineux">
-        <div>
-          <h2>🌞 Le geste numérique crée des tokens</h2>
-          <p>Chaque action numérique (respect, partage, reconnaissance) allume une lumière et crée du $KNY.</p>
-        </div>
-      </section>
-      <section>
-        <img src="images/03-redistribution-panier.png" alt="Panier communautaire">
-        <div>
-          <h2>🌊 Redistribution communautaire</h2>
-          <p>Les tokens minés sont versés dans un <strong>pool collectif</strong>. Ce pool est redistribué à tous les détenteurs, garantissant qu’aucun membre n’est oublié.</p>
-        </div>
-      </section>
-      <section>
-        <img src="images/04-nature-main-natte.png" alt="Respect de la nature">
-        <div>
-          <h2>🌿 Respect de la nature</h2>
-          <p>Les tokens récoltés favorisent la préservation de notre environnement naturel et culturel.</p>
-        </div>
-      </section>
-      <section>
-        <img src="images/05-unite-diversite-kanak.png" alt="Unité et diversité">
-        <div>
-          <h2>👥 Unité et diversité</h2>
-          <p>Le $KNY renforce la cohésion et célèbre la diversité culturelle de notre communauté, avec le Kanak comme pilier central.</p>
-        </div>
-      </section>
-      <section>
-        <img src="images/06-tracabilite-loupe-soleil.png" alt="Transparence des échanges">
-        <div>
-          <h2>🔍 Traçabilité et transparence</h2>
-          <p>Chaque transaction est visible et traçable, sous la lumière de la vérité.</p>
-        </div>
-      </section>
-    </div>
+<header>
+  <h1>$KNY — Comment ça marche</h1>
+  <a href="index.html" class="lang-switch">Accueil</a>
+  <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
+</header>
 
-    <div class="lang en hidden">
-      <!-- Version anglaise à dupliquer ici -->
-    </div>
-  </main>
+<main>
+  <div class="lang fr">
+    <section>
+      <img src="images/01-echange-natte.png" alt="Échange sur une natte">
+      <div>
+        <h2>💡 L’échange crée la richesse</h2>
+        <p>Chaque échange de $KNY peut inclure un <strong>geste numérique</strong> : respect, unité, partage. Ce geste agit comme un minage symbolique, créant de nouveaux tokens.</p>
+      </div>
+    </section>
 
-  <footer>
-    &copy; 2025 KNY Nation
-  </footer>
+    <section>
+      <img src="images/02-geste-numerique-soleil.png" alt="Geste numérique lumineux">
+      <div>
+        <h2>🌞 Le geste numérique crée des tokens</h2>
+        <p>Chaque action numérique (respect, partage, reconnaissance) allume une lumière et crée du $KNY.</p>
+      </div>
+    </section>
 
-  <script>
-    function toggleLanguage() {
-      const frSection = document.querySelector('.lang.fr');
-      const enSection = document.querySelector('.lang.en');
-      const button = document.querySelector('.lang-toggle');
+    <section>
+      <img src="images/03-redistribution-panier.png" alt="Redistribution communautaire">
+      <div>
+        <h2>🌊 Redistribution communautaire</h2>
+        <p>Les tokens minés sont versés dans un <strong>pool collectif</strong>. Ce pool est redistribué à tous les détenteurs, garantissant qu’aucun membre n’est oublié.</p>
+      </div>
+    </section>
 
-      frSection.classList.toggle('hidden');
-      enSection.classList.toggle('hidden');
+    <section>
+      <img src="images/04-nature-main-natte.png" alt="Respect de la nature">
+      <div>
+        <h2>🌿 Respect de la nature</h2>
+        <p>Les tokens récoltés favorisent la préservation de notre environnement naturel et culturel.</p>
+      </div>
+    </section>
 
-      button.textContent = frSection.classList.contains('hidden') ? 'Français' : 'English';
+    <section>
+      <img src="images/05-unite-diversite-kanak.png" alt="Unité et diversité">
+      <div>
+        <h2>👥 Unité et diversité</h2>
+        <p>Le $KNY renforce la cohésion et célèbre la diversité culturelle de notre communauté, avec le Kanak comme pilier central.</p>
+      </div>
+    </section>
+
+    <section>
+      <img src="images/06-tracabilite-loupe-soleil.png" alt="Transparence et traçabilité">
+      <div>
+        <h2>🔍 Traçabilité et transparence</h2>
+        <p>Chaque transaction est visible et traçable, sous la lumière de la vérité.</p>
+      </div>
+    </section>
+  </div>
+
+  <div class="lang en hidden">
+    <!-- Duplicate sections for English version if needed -->
+  </div>
+</main>
+
+<!-- Bouton retour en haut -->
+<a href="#" class="scroll-to-top" title="Retour en haut">↑</a>
+
+<footer>
+  &copy; 2025 KNY Nation
+</footer>
+
+<script>
+  function toggleLanguage() {
+    const frSection = document.querySelector('.lang.fr');
+    const enSection = document.querySelector('.lang.en');
+    const button = document.querySelector('.lang-toggle');
+
+    frSection.classList.toggle('hidden');
+    enSection.classList.toggle('hidden');
+
+    button.textContent = frSection.classList.contains('hidden') ? 'Français' : 'English';
+  }
+
+  // Bouton retour en haut
+  const scrollBtn = document.querySelector(".scroll-to-top");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add("show");
+    } else {
+      scrollBtn.classList.remove("show");
     }
-  </script>
+  });
+
+  scrollBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
 </body>
 </html>
