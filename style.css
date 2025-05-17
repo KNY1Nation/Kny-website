@@ -69,3 +69,65 @@ footer {
     font-size: 0.9em;
     margin-top: 3em;
 }
+
+/* Responsive design mobile */
+@media (max-width: 768px) {
+    main {
+        padding: 1em;
+        margin: 1em;
+    }
+
+    section {
+        margin-bottom: 2em;
+        text-align: center;
+    }
+
+    section img {
+        width: 100%;
+        max-width: 120px;
+        height: auto;
+        display: block;
+        margin: 1em auto;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    p {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+
+    header, footer {
+        padding: 0.8em;
+    }
+
+    button, .lang-switch, a {
+        width: auto;
+        font-size: 1em;
+        padding: 10px 15px;
+        text-align: center;
+    }
+}
+
+/* Responsive layout for desktop (flex layout for sections) */
+@media (min-width: 1024px) {
+    section {
+        display: flex;
+        align-items: center;
+        gap: 2em;
+    }
+
+    section:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    section img {
+        margin: 0;
+    }
+
+    section p {
+        max-width: 500px;
+    }
+}
