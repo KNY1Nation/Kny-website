@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$KNY — Comment ça marche</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Raleway', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fffbe9;
+      color: #222;
+    }
+
+    header, footer {
+      text-align: center;
+      padding: 1em;
+      background: #f0e6d2;
+    }
+
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 0.2em;
+    }
+
+    main {
+      padding: 1em;
+    }
+
+    section {
+      margin: 2em 0;
+      text-align: center;
+      padding: 1em;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    section img {
+      width: 100%;
+      max-width: 120px;
+      height: auto;
+      margin: 10px auto;
+      display: block;
+    }
+
+    h2 {
+      font-size: 1.4em;
+      margin: 0.5em 0;
+    }
+
+    p {
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.5em;
+      font-size: 1em;
+    }
+
+    .lang-toggle {
+      margin: 10px auto;
+      padding: 5px 15px;
+      font-size: 1em;
+      background: #e4d9c2;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      main {
+        padding: 2em 4em;
+      }
+
+      section {
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        text-align: left;
+      }
+
+      section img {
+        margin: 0;
+      }
+
+      section:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>$KNY — Comment ça marche</h1>
+    <a href="index.html" class="lang-switch">Accueil</a>
+    <button class="lang-toggle" onclick="toggleLanguage()">EN</button>
+  </header>
+
+  <main>
+    <div class="lang fr">
+      <section>
+        <img src="images/01-echange-natte.png" alt="Échange sur une natte">
+        <div>
+          <h2>💡 L’échange crée la richesse</h2>
+          <p>Chaque échange de $KNY peut inclure un <strong>geste numérique</strong> : respect, unité, partage. Ce geste agit comme un minage symbolique, créant de nouveaux tokens.</p>
+        </div>
+      </section>
+      <section>
+        <img src="images/02-geste-numerique-soleil.png" alt="Geste numérique lumineux">
+        <div>
+          <h2>🌞 Le geste numérique crée des tokens</h2>
+          <p>Chaque action numérique (respect, partage, reconnaissance) allume une lumière et crée du $KNY.</p>
+        </div>
+      </section>
+      <section>
+        <img src="images/03-redistribution-panier.png" alt="Panier communautaire">
+        <div>
+          <h2>🌊 Redistribution communautaire</h2>
+          <p>Les tokens minés sont versés dans un <strong>pool collectif</strong>. Ce pool est redistribué à tous les détenteurs, garantissant qu’aucun membre n’est oublié.</p>
+        </div>
+      </section>
+      <section>
+        <img src="images/04-nature-main-natte.png" alt="Respect de la nature">
+        <div>
+          <h2>🌿 Respect de la nature</h2>
+          <p>Les tokens récoltés favorisent la préservation de notre environnement naturel et culturel.</p>
+        </div>
+      </section>
+      <section>
+        <img src="images/05-unite-diversite-kanak.png" alt="Unité et diversité">
+        <div>
+          <h2>👥 Unité et diversité</h2>
+          <p>Le $KNY renforce la cohésion et célèbre la diversité culturelle de notre communauté, avec le Kanak comme pilier central.</p>
+        </div>
+      </section>
+      <section>
+        <img src="images/06-tracabilite-loupe-soleil.png" alt="Transparence des échanges">
+        <div>
+          <h2>🔍 Traçabilité et transparence</h2>
+          <p>Chaque transaction est visible et traçable, sous la lumière de la vérité.</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="lang en hidden">
+      <!-- Version anglaise à dupliquer ici -->
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 KNY Nation
+  </footer>
+
+  <script>
+    function toggleLanguage() {
+      const frSection = document.querySelector('.lang.fr');
+      const enSection = document.querySelector('.lang.en');
+      const button = document.querySelector('.lang-toggle');
+
+      frSection.classList.toggle('hidden');
+      enSection.classList.toggle('hidden');
+
+      button.textContent = frSection.classList.contains('hidden') ? 'Français' : 'English';
+    }
+  </script>
+</body>
+</html>
