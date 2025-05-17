@@ -272,4 +272,22 @@ footer {
     box-shadow: none;
   }
 }
+.cycle-arrow {
+  position: absolute;
+  font-size: 0.7em;
+  color: #444;
+  background: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+/* Position entre les icônes */
+.arrow1 { top: 5%; left: 70%; transform: rotate(25deg); }
+.arrow2 { top: 35%; right: -5%; transform: rotate(60deg); }
+.arrow3 { bottom: 25%; right: 10%; transform: rotate(120deg); }
+.arrow4 { bottom: 5%; left: 50%; transform: rotate(170deg); }
+.arrow5 { bottom: 25%; left: 5%; transform: rotate(-120deg); }
+.arrow6 { top: 35%; left: -5%; transform: rotate(-45deg); }
 
