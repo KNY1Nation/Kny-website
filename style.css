@@ -165,19 +165,23 @@ footer {
 
 .cycle-item {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  text-align: center;
+  z-index: 2;
 }
 
 .cycle-item img {
   width: 100%;
   height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
-.cycle-item img {
-  max-width: 100%;
-  max-height: 60px;
-  object-fit: contain;
+.cycle-label {
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 0.75em;
+  color: #2e2e2e;
 }
 
 /* Position des icônes autour du cercle */
