@@ -24,19 +24,34 @@
         <strong>Type de geste :</strong>
         <div id="gestureOptions" style="display: flex; gap: 20px; justify-content: space-around; flex-wrap: wrap; margin-bottom: 20px;">
           <label style="text-align: center;">
-            <input type="radio" name="gestureType" value="respect" checked style="display: none;">
-            <img src="images/gesture-respect.png" alt="Respect" style="width: 80px; cursor: pointer; border: 3px solid #0288d1; border-radius: 10px;">
-            <div><strong>Respect</strong></div>
+            <input type="radio" name="gestureType" value="bienvenue" checked style="display: none;">
+            <img src="images/gesture-bienvenue.png" alt="Bienvenue" style="width: 80px; cursor: pointer; border: 3px solid #0288d1; border-radius: 10px;">
+            <div><strong>Bienvenue</strong></div>
           </label>
           <label style="text-align: center;">
-            <input type="radio" name="gestureType" value="unité" style="display: none;">
-            <img src="images/gesture-unite.png" alt="Unité" style="width: 80px; cursor: pointer; border: 3px solid transparent; border-radius: 10px;">
-            <div><strong>Unité</strong></div>
+            <input type="radio" name="gestureType" value="départ" style="display: none;">
+            <img src="images/gesture-depart.png" alt="Départ" style="width: 80px; cursor: pointer; border: 3px solid transparent; border-radius: 10px;">
+            <div><strong>Départ</strong></div>
           </label>
           <label style="text-align: center;">
-            <input type="radio" name="gestureType" value="réparation" style="display: none;">
-            <img src="images/gesture-reparation.png" alt="Réparation" style="width: 80px; cursor: pointer; border: 3px solid transparent; border-radius: 10px;">
-            <div><strong>Réparation</strong></div>
+            <input type="radio" name="gestureType" value="pardon" style="display: none;">
+            <img src="images/gesture-pardon.png" alt="Pardon" style="width: 80px; cursor: pointer; border: 3px solid transparent; border-radius: 10px;">
+            <div><strong>Pardon</strong></div>
+          </label>
+          <label style="text-align: center;">
+            <input type="radio" name="gestureType" value="remerciement" style="display: none;">
+            <img src="images/gesture-remerciement.png" alt="Remerciement" style="width: 80px; cursor: pointer; border: 3px solid transparent; border-radius: 10px;">
+            <div><strong>Remerciement</strong></div>
+          </label>
+          <label style="text-align: center;">
+            <input type="radio" name="gestureType" value="voeux" style="display: none;">
+            <img src="images/gesture-voeux.png" alt="Voeux" style="width: 80px; cursor: pointer; border: 3px solid transparent; border-radius: 10px;">
+            <div><strong>Voeux</strong></div>
+          </label>
+          <label style="text-align: center;">
+            <input type="radio" name="gestureType" value="autre" style="display: none;">
+            <img src="images/gesture-autre.png" alt="Autre" style="width: 80px; cursor: pointer; border: 3px solid transparent; border-radius: 10px;">
+            <div><strong>Autre</strong></div>
           </label>
         </div>
 
@@ -55,7 +70,7 @@
       <h3 style="color: #d32f2f; margin-top: 0;">Besoin d’aide ?</h3>
       <ul style="line-height: 1.6; padding-left: 1.2em;">
         <li><strong>Adresse Ethereum :</strong> L’adresse publique du portefeuille du destinataire. Ex : <code>0x123...ABCD</code></li>
-        <li><strong>Type de geste :</strong> Choisissez un geste symbolique : <em>Respect, Unité ou Réparation</em>.</li>
+        <li><strong>Type de geste :</strong> Choisissez un geste symbolique : <em>Bienvenue, Départ, Pardon, Remerciement, Voeux, Autre</em>.</li>
         <li><strong>Message :</strong> Un mot court qui accompagne votre geste (facultatif).</li>
         <li><strong>Frais :</strong> Il faut un peu de crypto (ex: ETH) pour payer les frais de transaction.</li>
         <li><strong>Où voir le geste ?</strong> Les gestes envoyés apparaîtront sur une future page ou via un explorateur (ex: Polygonscan).</li>
@@ -68,7 +83,7 @@
   </footer>
 
   <script>
-    const contractAddress = 'TON_CONTRAT_GESTURE'; // Remplacer par l'adresse réelle
+    const contractAddress = 'TON_CONTRAT_GESTURE';
     const abi = [
       "function sendGesture(address to, string memory gestureType, string memory message) external",
       "event GestureSent(uint256 indexed id, address indexed from, address indexed to, string gestureType)"
@@ -97,7 +112,6 @@
       }
     };
 
-    // Activer sélection visuelle sur images
     document.querySelectorAll("#gestureOptions label").forEach(label => {
       label.addEventListener("click", () => {
         document.querySelectorAll("#gestureOptions img").forEach(img => {
