@@ -186,11 +186,11 @@ footer {
 
 /* Position des icônes autour du cercle */
 .item1 { top: 0; left: 50%; transform: translateX(-50%); }
-.item2 { top: 15%; right: 0; transform: translateY(-50%); }
-.item3 { top: 50%; right: 0; transform: translateY(-50%); }
+.item2 { top: 22%; right: 0; transform: translateY(-50%); }
+.item3 { top: 66%; right: 0; transform: translateY(-50%); }
 .item4 { bottom: 0; left: 50%; transform: translateX(-50%); }
-.item5 { top: 50%; left: 0; transform: translateY(-50%); }
-.item6 { top: 15%; left: 0; transform: translateY(-50%); }
+.item5 { top: 60%; left: 0; transform: translateY(-50%); }
+.item6 { top: 22%; left: 0; transform: translateY(-50%); }
 .kny-cycle {
   display: flex;
   justify-content: center;
