@@ -290,3 +290,10 @@ footer {
 .arrow4 { bottom: 12%; left: 28%; transform: rotate(-150deg); }
 .arrow5 { top: 50%; left: 8%; transform: rotate(-90deg); }
 .arrow6 { top: 12%; left: 28%; transform: rotate(-30deg); }
+
+.icon-title {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
