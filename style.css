@@ -272,22 +272,26 @@ footer {
     box-shadow: none;
   }
 }
+
 .cycle-arrow {
   position: absolute;
-  font-size: 0.7em;
+  font-size: 0.75em;
   color: #444;
-  background: #fff;
-  padding: 2px 6px;
-  border-radius: 4px;
-  white-space: nowrap;
+  background: white;
+  padding: 4px 6px;
+  border-radius: 5px;
   font-weight: bold;
+  z-index: 10;
+  white-space: nowrap;
+  box-shadow: 0 0 3px rgba(0,0,0,0.1);
+  transform: translate(-50%, -50%);
 }
 
-/* Position entre les icônes */
-.arrow1 { top: 5%; left: 70%; transform: rotate(25deg); }
-.arrow2 { top: 35%; right: -5%; transform: rotate(60deg); }
-.arrow3 { bottom: 25%; right: 10%; transform: rotate(120deg); }
-.arrow4 { bottom: 5%; left: 50%; transform: rotate(170deg); }
-.arrow5 { bottom: 25%; left: 5%; transform: rotate(-120deg); }
-.arrow6 { top: 35%; left: -5%; transform: rotate(-45deg); }
+/* Position des mots autour du cercle */
+.arrow1 { top: 8%; left: 70%; }
+.arrow2 { top: 30%; left: 92%; }
+.arrow3 { top: 72%; left: 90%; }
+.arrow4 { bottom: 8%; left: 50%; }
+.arrow5 { top: 72%; left: 10%; }
+.arrow6 { top: 30%; left: 8%; }
 
