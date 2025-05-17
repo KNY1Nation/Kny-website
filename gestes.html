@@ -2,32 +2,47 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Envoyer un geste - $KNY</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
 </head>
-<body style="font-family: sans-serif; max-width: 600px; margin: auto;">
-  <h1>Envoyer un geste</h1>
-  <form id="gestureForm">
-    <label>Destinataire :</label><br>
-    <input type="text" id="to" style="width: 100%;"><br><br>
+<body>
+  <header>
+    <h1>$KNY — Envoyer un geste</h1>
+    <a href="index.html" class="lang-switch">Accueil</a>
+  </header>
 
-    <label>Type de geste :</label><br>
-    <select id="gestureType" style="width: 100%;">
-      <option value="respect">Respect</option>
-      <option value="unité">Unité</option>
-      <option value="réparation">Réparation</option>
-    </select><br><br>
+  <main>
+    <section>
+      <form id="gestureForm">
+        <label for="to"><strong>Destinataire :</strong></label><br>
+        <input type="text" id="to" style="width: 100%;"><br><br>
 
-    <label>Message (facultatif) :</label><br>
-    <input type="text" id="message" style="width: 100%;"><br><br>
+        <label for="gestureType"><strong>Type de geste :</strong></label><br>
+        <select id="gestureType" style="width: 100%;">
+          <option value="respect">Respect</option>
+          <option value="unité">Unité</option>
+          <option value="réparation">Réparation</option>
+        </select><br><br>
 
-    <button type="submit">Envoyer</button>
-  </form>
+        <label for="message"><strong>Message (facultatif) :</strong></label><br>
+        <input type="text" id="message" style="width: 100%;"><br><br>
 
-  <p id="status"></p>
+        <button type="submit">Envoyer</button>
+      </form>
+      <p id="status"></p>
+    </section>
+  </main>
 
+  <footer>
+    &copy; 2025 KNY Nation
+  </footer>
+
+  <!-- Script Ethereum -->
   <script>
-    const contractAddress = 'TON_CONTRAT_GESTURE'; // à remplacer par l'adresse déployée
+    const contractAddress = 'TON_CONTRAT_GESTURE'; // À remplacer
     const abi = [
       "function sendGesture(address to, string memory gestureType, string memory message) external",
       "event GestureSent(uint256 indexed id, address indexed from, address indexed to, string gestureType)"
@@ -57,4 +72,5 @@
     }
   </script>
 </body>
+
 </html>
