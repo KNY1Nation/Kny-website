@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Envoyer un geste - $KNY</title>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+</head>
+<body style="font-family: sans-serif; max-width: 600px; margin: auto;">
+  <h1>Envoyer un geste</h1>
+  <form id="gestureForm">
+    <label>Destinataire :</label><br>
+    <input type="text" id="to" style="width: 100%;"><br><br>
+
+    <label>Type de geste :</label><br>
+    <select id="gestureType" style="width: 100%;">
+      <option value="respect">Respect</option>
+      <option value="unité">Unité</option>
+      <option value="réparation">Réparation</option>
+    </select><br><br>
+
+    <label>Message (facultatif) :</label><br>
+    <input type="text" id="message" style="width: 100%;"><br><br>
+
+    <button type="submit">Envoyer</button>
+  </form>
+
+  <p id="status"></p>
+
+  <script>
+    const contractAddress = 'TON_CONTRAT_GESTURE'; // à remplacer par l'adresse déployée
+    const abi = [
+      "function sendGesture(address to, string memory gestureType, string memory message) external",
+      "event GestureSent(uint256 indexed id, address indexed from, address indexed to, string gestureType)"
+    ];
+
+    document.getElementById("gestureForm").onsubmit = async function (e) {
+      e.preventDefault();
+      const to = document.getElementById("to").value;
+      const gestureType = document.getElementById("gestureType").value;
+      const message = document.getElementById("message").value;
+
+      if (!window.ethereum) return alert("MetaMask est requis");
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      await provider.send("eth_requestAccounts", []);
+      const signer = provider.getSigner();
+      const contract = new ethers.Contract(contractAddress, abi, signer);
+
+      try {
+        const tx = await contract.sendGesture(to, gestureType, message);
+        document.getElementById("status").innerText = "Transaction envoyée...";
+        await tx.wait();
+        document.getElementById("status").innerText = "✅ Geste envoyé avec succès.";
+      } catch (err) {
+        console.error(err);
+        document.getElementById("status").innerText = "Erreur : " + err.message;
+      }
+    }
+  </script>
+</body>
+</html>
