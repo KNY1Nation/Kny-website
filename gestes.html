@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Envoyer un geste - $KNY</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
 </head>
 <body>
@@ -19,14 +19,13 @@
       <form id="gestureForm">
         <label for="to"><strong>Destinataire :</strong></label><br>
         <input type="text" id="to" placeholder="0x1234...ABCD" style="width: 100%;"><br>
-        <small>Exemple : adresse Ethereum de votre destinataire</small>
+        <small style="display: block; margin-bottom: 1em; color: #555;">Exemple : adresse Ethereum du destinataire</small>
 
-
-        <label for="gestureType"><strong>Type de geste :</strong></label><br>
+        <strong>Type de geste :</strong>
         <div id="gestureOptions" style="display: flex; gap: 20px; justify-content: space-around; flex-wrap: wrap; margin-bottom: 20px;">
           <label style="text-align: center;">
             <input type="radio" name="gestureType" value="respect" checked style="display: none;">
-            <img src="images/gesture-respect.png" alt="Respect" style="width: 80px; cursor: pointer; border: 3px solid transparent; border-radius: 10px;">
+            <img src="images/gesture-respect.png" alt="Respect" style="width: 80px; cursor: pointer; border: 3px solid #0288d1; border-radius: 10px;">
             <div><strong>Respect</strong></div>
           </label>
           <label style="text-align: center;">
@@ -41,38 +40,35 @@
           </label>
         </div>
 
-        <small>Chaque geste est symbolique et visible publiquement (NFT)</small>
-
         <label for="message"><strong>Message (facultatif) :</strong></label><br>
         <input type="text" id="message" placeholder="Merci pour ton aide !" style="width: 100%;"><br>
-        <small>Message visible avec le geste (facultatif)</small>
+        <small style="display: block; margin-bottom: 1em; color: #555;">Ce message accompagne le geste (NFT visible)</small>
 
         <button type="submit">Envoyer</button>
-        <p style="font-size: 0.9em; color: #555;">Vous aurez besoin de <strong>MetaMask</strong> connecté à la bonne blockchain pour envoyer un geste.</p>
       </form>
+
       <p id="status"></p>
+      <p style="font-size: 0.9em; color: #555;">Vous aurez besoin de <strong>MetaMask</strong> connecté à la bonne blockchain pour envoyer un geste.</p>
     </section>
-    
+
     <aside style="background: #fefae0; border-left: 5px solid #d32f2f; padding: 20px; margin-top: 40px; border-radius: 10px;">
       <h3 style="color: #d32f2f; margin-top: 0;">Besoin d’aide ?</h3>
       <ul style="line-height: 1.6; padding-left: 1.2em;">
-        <li><strong>Adresse Ethereum :</strong> C’est l’adresse publique du portefeuille du destinataire. Ex : <code>0x123...ABCD</code></li>
+        <li><strong>Adresse Ethereum :</strong> L’adresse publique du portefeuille du destinataire. Ex : <code>0x123...ABCD</code></li>
         <li><strong>Type de geste :</strong> Choisissez un geste symbolique : <em>Respect, Unité ou Réparation</em>.</li>
         <li><strong>Message :</strong> Un mot court qui accompagne votre geste (facultatif).</li>
         <li><strong>Frais :</strong> Il faut un peu de crypto (ex: ETH) pour payer les frais de transaction.</li>
-        <li><strong>Où voir le geste ?</strong> Les gestes envoyés apparaîtront sur une future page ou via un explorateur (ex: Polygonscan si sur Polygon).</li>
+        <li><strong>Où voir le geste ?</strong> Les gestes envoyés apparaîtront sur une future page ou via un explorateur (ex: Polygonscan).</li>
       </ul>
     </aside>
-
   </main>
 
   <footer>
     &copy; 2025 KNY Nation
   </footer>
 
-  <!-- Script Ethereum -->
   <script>
-    const contractAddress = 'TON_CONTRAT_GESTURE'; // À remplacer
+    const contractAddress = 'TON_CONTRAT_GESTURE'; // Remplacer par l'adresse réelle
     const abi = [
       "function sendGesture(address to, string memory gestureType, string memory message) external",
       "event GestureSent(uint256 indexed id, address indexed from, address indexed to, string gestureType)"
@@ -81,7 +77,7 @@
     document.getElementById("gestureForm").onsubmit = async function (e) {
       e.preventDefault();
       const to = document.getElementById("to").value;
-      const gestureType = document.getElementById("gestureType").value;
+      const gestureType = document.querySelector('input[name="gestureType"]:checked').value;
       const message = document.getElementById("message").value;
 
       if (!window.ethereum) return alert("MetaMask est requis");
@@ -99,8 +95,18 @@
         console.error(err);
         document.getElementById("status").innerText = "Erreur : " + err.message;
       }
-    }
+    };
+
+    // Activer sélection visuelle sur images
+    document.querySelectorAll("#gestureOptions label").forEach(label => {
+      label.addEventListener("click", () => {
+        document.querySelectorAll("#gestureOptions img").forEach(img => {
+          img.style.border = "3px solid transparent";
+        });
+        label.querySelector("img").style.border = "3px solid #0288d1";
+        label.querySelector("input").checked = true;
+      });
+    });
   </script>
 </body>
-
 </html>
