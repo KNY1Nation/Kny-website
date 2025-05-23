@@ -1,6 +1,7 @@
 body {
   font-family: 'Raleway', sans-serif;
-  background: linear-gradient(to bottom, #fefae0, #e0f7fa);
+  background: url('images/drapeau-kanaky.png') no-repeat center center fixed;
+  background-size: cover;
   margin: 0;
   padding: 0;
   color: #2e2e2e;
