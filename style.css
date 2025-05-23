@@ -18,7 +18,8 @@ main {
   max-width: 900px;
   margin: 2em auto;
   padding: 2em;
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.92); /* transparence pour lisibilité */
+  backdrop-filter: blur(2px); /* flou léger pour lisibilité */
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   border-radius: 10px;
   border-left: 8px solid #d32f2f;
@@ -73,9 +74,16 @@ footer {
 
 /* Responsive design mobile */
 @media (max-width: 768px) {
+  body {
+    background: url('images/drapeau-kanaky-portable.png') no-repeat center center fixed;
+    background-size: cover;
+  }
+
   main {
     padding: 1em;
     margin: 1em;
+    background: rgba(255, 255, 255, 0.95); /* plus opaque pour petit écran */
+    backdrop-filter: blur(2px);
   }
 
   section {
